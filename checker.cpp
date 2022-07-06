@@ -10,12 +10,9 @@ bool bBatteryIsOk(float temperature, float soc, float chargeRate)
   temperatureCondition = bTemperatureIsOk(temperature);
   socCondition = bSocIsOk(soc);
   chargeRateCondition = bChargeRateIsOk(chargeRate);
-
-  if((temperatureCondition && socCondition && chargeRateCondition) == true)
-  {
-      batteryCondition = true;
-  }
-
+  
+  batteryCondition = (temperatureCondition && socCondition && chargeRateCondition);
+  
   return batteryCondition;
 }
 
